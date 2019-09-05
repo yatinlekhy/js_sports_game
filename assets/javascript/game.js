@@ -1,4 +1,6 @@
 (function () {
+    let hoSound = new Audio('./assets/sound/ho.wav');
+    let crySound = new Audio('./assets/sound/cry.mp3');
     let count = 0;
     let goalCount = 0
     const teamoneNumshots = document.getElementById("teamone-numshots");
@@ -14,6 +16,7 @@
         if (randomNum > 0.5) {
             goalCount = goalCount + 1
             teamoneNumhits.innerHTML = goalCount
+            hoSound.play();
         }
     })
     let twoCount = 0
@@ -31,6 +34,7 @@
         if (randomNum > 0.5) {
             goaltwoCount = goaltwoCount + 1
             teamtwoNumhits.innerHTML = goaltwoCount
+            hoSound.play();
         }
     })
     let resetCount = 0
@@ -48,13 +52,14 @@
         teamoneNumhits.innerHTML=0  
         teamtwoNumhits.innerHTML=0
         teamtwoNumshots.innerHTML=0
+        crySound.play();
         
 
 
 
     }
     )
-
+    
 
 
 }())
